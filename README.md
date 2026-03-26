@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * Додано новий модуль аналізу трафіку для BagStore.
+
+* Додаткова перевірка для Pull Request.
