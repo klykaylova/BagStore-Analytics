@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions 
 
 * Оновлено загальну структуру аналітики BagStore.
+
+# Версія v1.0: Додано логування та Sentry.
