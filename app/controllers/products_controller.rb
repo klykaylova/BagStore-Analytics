@@ -25,9 +25,20 @@ class ProductsController < ApplicationController
 
     # 🔹 Пагінація → 8 товарів на сторінку (2 ряди по 4)
     @products = @products.page(params[:page]).per(8)
+
+    # --- ЛОГУВАННЯ АКТИВНОСТІ (Частина 2) ---
+    Rails.logger.info "--- [BagStore] Користувач переглянув каталог ---"
+    Rails.logger.info "[BagStore] Сортування: #{params[:sort] || 'за замовчуванням'}"
+    if params[:category_id].present?
+      Rails.logger.info "[BagStore] Обрана категорія ID: #{params[:category_id]}"
+    end
   end
 
   def show
     @product = Product.find(params[:id])
+    
+    # --- ЛОГУВАННЯ АКТИВНОСТІ (Частина 2) ---
+    # Цей рядок має бути ВСЕРЕДИНІ методу show
+    Rails.logger.info "[BagStore] Перегляд товару: #{@product.name} (ID: #{@product.id})"
   end
 end

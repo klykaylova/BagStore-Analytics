@@ -66,3 +66,6 @@ group :test do
 end
 
 gem "kaminari"
+
+gem "sentry-ruby"
+gem "sentry-rails"
